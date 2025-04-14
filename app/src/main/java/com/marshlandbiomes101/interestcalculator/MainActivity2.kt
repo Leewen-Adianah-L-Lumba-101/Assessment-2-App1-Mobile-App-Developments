@@ -3,71 +3,69 @@ package com.marshlandbiomes101.interestcalculator
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.marshlandbiomes101.interestcalculator.databinding.ActivityMainBinding
 //import kotlin.math.pow
-//import android.widget.EditText
-//import android.widget.Button
-//import androidx.activity.enableEdgeToEdge
-//import androidx.core.view.ViewCompat
-//import androidx.core.view.WindowInsetsCompat
-//import android.util.Log
+import android.widget.EditText
+import android.widget.Button
+import androidx.activity.enableEdgeToEdge
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import android.util.Log
 
 //@Suppress("IMPLICIT_CAST_TO_ANY")
 
-class MainActivity2 : AppCompatActivity() {
+//private lateinit var binding : ActivityMainBinding
 
-    private lateinit var binding : ActivityMainBinding
+class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.submit.setOnClickListener{
-            calculateSimpleInterest(1)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
-        
-        binding.submit.setOnClickListener {
-            Toast.makeText(this, "Please input values", Toast.LENGTH_SHORT).show()
+
+        val btn = findViewById<Button>(R.id.submit)
+        btn.setOnClickListener {
+            Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun calculateSimpleInterest(operation: Int) {
-        val principalAmountCheck = binding.principalAmount.text.toString()
-        val yearsCheck = binding.years.text.toString()
-        val interestRateCheck = binding.interestRate.text.toString()
+        val principalAmountCheck = (findViewById<EditText>(R.id.principal_amount)).toString()
+        val yearsCheck = (findViewById<EditText>(R.id.years)).toString()
+        val interestRateCheck = (findViewById<EditText>(R.id.interest_rate)).toString()
 
         if (principalAmountCheck.isEmpty() || yearsCheck.isEmpty() || interestRateCheck.isEmpty()) {
             Toast.makeText(this, "Please input values", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        val principalAmount = principalAmountCheck.toIntOrNull()
-        val years = yearsCheck.toIntOrNull()
-        val interestRate = interestRateCheck.toIntOrNull()
-
-        if (principalAmount != null && years != null && interestRate != null) {
-            val result = when (operation) {
-                1 -> principalAmount * years * interestRate
-//                2 -> principalAmount * (Math.pow(1))
-                else -> 0
-            }
-
-        } else {
-            Toast.makeText(this, "Please re-input your values", Toast.LENGTH_SHORT).show()
             return
         }
     }
 }
 
 
-    //        val years = findViewById<EditText>(R.id.years)
 
-    //      enableEdgeToEdge()
-//            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
+
+//
+//        val principalAmount = principalAmountCheck.toIntOrNull()
+//        val years = yearsCheck.toIntOrNull()
+//        val interestRate = interestRateCheck.toIntOrNull()
+//
+//        if (principalAmount != null && years != null && interestRate != null) {
+//            val result = when (operation) {
+//                1 -> principalAmount * years * interestRate
+////                2 -> principalAmount * (Math.pow(1))
+//                else -> 0
+//            }
+//
+//        } else {
+//            Toast.makeText(this, "Please re-input your values", Toast.LENGTH_SHORT).show()
+//            return
+//        }
+//    }
+//}
+    //        val years = findViewById<EditText>(R.id.years)
 
 //        val btnSubmit = findViewById<Button>(R.id.submit)
 //        btnSubmit.setOnClickListener {
@@ -76,4 +74,18 @@ class MainActivity2 : AppCompatActivity() {
 //            calculateSimpleInterest()
 //        }
 //    }
-    
+//
+
+
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//
+//        binding.submit.setOnClickListener {
+//            Toast.makeText(this, "Please input values", Toast.LENGTH_SHORT).show()
+//        }
+//
+//        binding.submit.setOnClickListener{
+//            calculateSimpleInterest(1)
+//        }
+//
+//    }

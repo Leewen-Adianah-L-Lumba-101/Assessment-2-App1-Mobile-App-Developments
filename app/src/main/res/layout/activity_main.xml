@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black_ui"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity2">in
 
     <TextView
         android:id="@+id/app_title"
@@ -186,6 +186,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculator_box"
         />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
