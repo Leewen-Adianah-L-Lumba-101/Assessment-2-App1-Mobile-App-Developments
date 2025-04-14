@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">InterestCalculator</string>
+    <string name="simple_interest_calculator">SIMPLE INTEREST CALCULATOR</string>
+    <string name="submit">SUBMIT</string>
+    <string name="principal_amount">Principal Amount:</string>
+    <string name="interest_rate">Interest Rate:</string>
+    <string name="years">Years in Bank:</string>
+</resources>
