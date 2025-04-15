@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black_ui"
-    tools:context=".MainActivity2">in
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/app_title"
@@ -36,7 +36,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/app_title">
-
 
             <!--Calculator box top-->
             <LinearLayout
@@ -85,7 +84,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf = "@id/principal_amount_label"/>
-<!--                    tools:ignore="HardcodedText" -->
 
                 </LinearLayout>
 
@@ -96,7 +94,6 @@
                     android:orientation="vertical"
                     android:layout_marginTop="15dp">
 
-
                     <TextView
                         android:id="@+id/interest_rate_label"
                         android:layout_width="match_parent"
@@ -105,23 +102,50 @@
                         android:textColor="@color/black_ui"
                         android:text="@string/interest_rate" />
 
-                    <EditText
-                        android:id="@+id/interest_rate"
-                        android:layout_width="250dp"
-                        android:layout_height="48sp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/roundedcorners"
-                        android:backgroundTint="@color/white"
-                        android:hint="0"
-                        android:importantForAutofill="no"
-                        android:inputType="numberDecimal"
-                        android:padding="10dp"
-                        android:textSize="12sp"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
 
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/principal_amount_label"/>
-<!--                    tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" -->
+                        <Button
+                            android:id="@+id/decreaseRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/roundedcorners"
+                            android:backgroundTint="@color/white"/>
+
+                        <EditText
+                            android:id="@+id/interest_rate"
+                            android:layout_width="110dp"
+                            android:layout_height="48sp"
+                            android:background="@drawable/roundedcorners"
+                            android:backgroundTint="@color/white"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:padding="15dp"
+                            android:textSize="12sp"
+                            android:textAlignment="center"
+                            android:hint="%0"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                        <Button
+                            android:id="@+id/increaseRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/roundedcorners"
+                            android:backgroundTint="@color/white"
+                            />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <!--Years-->
@@ -131,7 +155,6 @@
                     android:orientation="vertical"
                     android:layout_marginTop="15dp">
 
-
                     <TextView
                         android:id="@+id/years_label"
                         android:layout_width="match_parent"
@@ -140,27 +163,56 @@
                         android:textColor="@color/black_ui"
                         android:text="@string/years" />
 
-                    <EditText
-                        android:id="@+id/years"
-                        android:layout_width="250dp"
-                        android:layout_height="48sp"
-                        android:layout_marginTop="20dp"
-                        android:importantForAutofill="no"
-                        android:inputType="number"
-                        android:hint="0"
-                        android:background="@drawable/roundedcorners"
-                        android:padding="10dp"
-                        android:backgroundTint="@color/white"
-                        android:textSize="12sp"
+                    <!--Years increase/decrease-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
 
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/principal_amount_label"/>
-<!--                        tools:ignore="HardcodedText" -->
+                        <Button
+                            android:id="@+id/decreaseYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/roundedcorners"
+                            android:backgroundTint="@color/white"/>
+
+                        <EditText
+                            android:id="@+id/years"
+                            android:layout_width="110dp"
+                            android:layout_height="48sp"
+                            android:background="@drawable/roundedcorners"
+                            android:backgroundTint="@color/white"
+                            android:importantForAutofill="no"
+                            android:inputType="numberDecimal"
+                            android:padding="15dp"
+                            android:textSize="12sp"
+                            android:textAlignment="center"
+                            android:hint="0"
+                            android:layout_gravity="center_horizontal"
+                            />
+
+                        <Button
+                            android:id="@+id/increaseYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/roundedcorners"
+                            android:backgroundTint="@color/white"
+                            />
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
+
         <!--Layout for empty space-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -171,6 +223,7 @@
 
     </LinearLayout>
 
+    <!--Submit Button-->
     <Button
         android:id="@+id/submit"
         android:background="@drawable/roundedcorners"
@@ -186,8 +239,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculator_box"
         />
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
