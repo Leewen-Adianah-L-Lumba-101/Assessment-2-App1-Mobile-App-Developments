@@ -3,6 +3,7 @@ package com.marshlandbiomes101.interestcalculator
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
+<<<<<<< HEAD
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -10,12 +11,20 @@ import android.widget.TextView
 import android.widget.Toast
 import android.window.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+=======
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+>>>>>>> 0b2f2cc0eac67e6135d76418f4849ed63e65eafb
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+<<<<<<< HEAD
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.Calendar
+=======
+>>>>>>> 0b2f2cc0eac67e6135d76418f4849ed63e65eafb
 
 class MainActivity : ComponentActivity() {
 
@@ -43,6 +52,27 @@ class MainActivity : ComponentActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+<<<<<<< HEAD
+=======
+
+        val btn = findViewById<Button>(R.id.submit)
+        btn.setOnClickListener {
+            Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun calculateSimpleInterest(operation: Int) {
+        val principalAmountCheck = (findViewById<EditText>(R.id.principal_amount)).toString()
+        val yearsCheck = (findViewById<EditText>(R.id.years)).toString()
+        val interestRateCheck = (findViewById<EditText>(R.id.interest_rate)).toString()
+
+        if (principalAmountCheck.isEmpty() || yearsCheck.isEmpty() || interestRateCheck.isEmpty()) {
+            Toast.makeText(this, "Please input values", Toast.LENGTH_SHORT).show()
+            return
+        }
+    }
+}
+>>>>>>> 0b2f2cc0eac67e6135d76418f4849ed63e65eafb
 
         // Initializing variables to submit, increase and decrease values
         val submitBtn = findViewById<Button>(R.id.submit)
